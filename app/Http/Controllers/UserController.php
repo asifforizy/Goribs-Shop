@@ -10,12 +10,16 @@ class UserController extends Controller
 {
     public function index()
     {
-        if (Auth::check()) {
-            if (Auth::user()->user_type == "user") {
-                return view("dashboard");
-            } else if (Auth::user()->user_type == "admin") {
-                return view("admin.dashboard");
-            }
+        if (!Auth::check()) {
+            return redirect()->route('login');
         }
+
+        $user = Auth::user();
+
+        if ($user->user_type == "admin") {
+            return view("admin.dashboard");
+        }
+
+        return view("dashboard");
     }
 }
