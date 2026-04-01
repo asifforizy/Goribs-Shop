@@ -41,7 +41,7 @@
                     @endif
                 </td>
                 <td>
-                    <a style="color: red;" href="{{ route('admin.updateproduct',$product->id) }}">update</a><br>
+                    <a style="color: green;" href="{{ route('admin.updateproduct',$product->id) }}">Update</a><br>
                     <a style="color: red;" href="{{ route('admin.deleteproduct',$product->id) }}">Delete</a>
                 </td>
             </tr>
