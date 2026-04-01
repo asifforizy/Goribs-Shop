@@ -1,1 +1,47 @@
-/* your styles go here */
+.container-fluid form {
+    display: flex;
+    gap: 15px; 
+    max-width: 400px;
+    margin-top: 30px;
+}
+
+.container-fluid input[type="text"] {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.container-fluid input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.container-fluid input[type="submit"] {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.container-fluid input[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: scale(1.03);
+}
+
+.scs-msg {
+    background-color: #14bc11; 
+    color: #064e3b; 
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: center;
+}
