@@ -55,28 +55,37 @@ class AdminController extends Controller
     }
 
 
-    public function  postAddProduct(Request $request)
+    public function postAddProduct(Request $request)
     {
+        $request->validate([
+            'product_title' => 'required',
+            'product_quantity' => 'required|numeric',
+            'product_price' => 'required|numeric',
+            'product_category' => 'required',
+            'product_image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048'
+        ]);
+
         $product = new Product();
         $product->product_title = $request->product_title;
         $product->product_quantity = $request->product_quantity;
         $product->product_price = $request->product_price;
         $product->product_category = $request->product_category;
 
-        $image = $request->product_image;
-        if ($image) {
-            $imagename = time().'.'.$image->getClientOriginalExtension();
+        if ($request->hasFile('product_image')) {
+            $image = $request->file('product_image');
+            $imagename = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('products'), $imagename);
             $product->product_image = $imagename;
         }
-        $product->product_category=$request->product_category;
-        $product->save();
-        if($image &&$product->save()){
-            $request->product_image->move('products',$image);
-        }
 
-        return redirect()->back()->with('product_message','Product added successfully');
+        $product->save();
+
+        return redirect()->back()->with('product_message', 'Product added successfully');
     }
 
-
-    
+    public function viewProduct()
+    {
+        $products = Product::all();
+        return view('admin.viewproduct', compact('products'));
+    }
 }
