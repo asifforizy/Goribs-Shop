@@ -1,4 +1,4 @@
-@extends('admin.maindesign')
+@extends('admin.maindesign') 
 
 @section('view_product')
 <div class="container-fluid">
@@ -6,6 +6,10 @@
 
     @if(session('product_message'))
         <div class="scs-msg">{{ session('product_message') }}</div>
+    @endif
+
+     @if(session('delete_product_message'))
+        <div class="scs-msg">{{ session('delete_product_message') }}</div>
     @endif
 
     <table border="1" cellpadding="10" cellspacing="0" style="width:100%; text-align:center;">
@@ -37,8 +41,7 @@
                     @endif
                 </td>
                 <td>
-                    <a style="color: green;" href="\">Update</a><br>
-                    <a style="color: red;" href="\">Delete</a>
+                    <a style="color: red;" href="{{ route('admin.deleteproduct',$product->id) }}">Delete</a>
                 </td>
             </tr>
             @endforeach
