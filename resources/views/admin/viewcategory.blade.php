@@ -25,7 +25,9 @@
                         <tr>
                             <td>{{ $cat->id }}</td>
                             <td>{{ $cat->category }}</td>
-                            <td style="color: red;"><a href="{{ route('admin.categorydelete', $cat->id) }}">Delete</a>
+                            <td >
+                                <a style="color: red;" href="{{ route('admin.categorydelete', $cat->id) }}">Delete</a>
+                                <a style="color: green;" href="{{ route('admin.categoryupdate', $cat->id) }}">Update</a>
                             </td>
                         </tr>
                     @empty

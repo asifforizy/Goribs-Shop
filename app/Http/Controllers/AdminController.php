@@ -19,28 +19,42 @@ class AdminController extends Controller
         $category = new Category();
         $category->category = $request->category;
         $category->save();
-       return redirect()->back()->with('category_message', 'Category added successfully!');
+        return redirect()->back()->with('category_message', 'Category added successfully!');
     }
 
 
-     public function viewCategory()
+    public function viewCategory()
     {
 
 
-        $category =Category::all();
-        
-       return view('admin.viewcategory', compact('category'));
+        $category = Category::all();
+
+        return view('admin.viewcategory', compact('category'));
     }
 
 
-    public function deleteCategory($id){
+    public function deleteCategory($id)
+    {
         $category = Category::findOrFail($id);
         $category->delete();
         return redirect()->back()->with('deletecategory_message', 'Deleted successfully');
+    }
 
+
+    public function updateCategory($id)
+    {
+        $category = Category::findOrFail($id);
+        return view('admin.updatecategory', compact('category'));
     }
 
 
 
-    
+
+    public function postUpdateCategory(Request $request,  $id)
+    {
+        $category = Category::findOrFail($id);
+        $category->category = $request->category;
+        $category->save();
+        return redirect()->back()->with('category_updated_message', 'Category Updated successfully!');
+    }
 }
