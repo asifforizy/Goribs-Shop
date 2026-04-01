@@ -1,6 +1,6 @@
 .container-fluid form {
     display: flex;
-    gap: 15px; 
+    gap: 15px;
     max-width: 400px;
     margin-top: 30px;
 }
@@ -37,11 +37,109 @@
 }
 
 .scs-msg {
-    background-color: #14bc11; 
-    color: #064e3b; 
+    background-color: #14bc11;
+    color: #064e3b;
     padding: 12px 20px;
     border-radius: 8px;
     margin-bottom: 20px;
     font-weight: 500;
     text-align: center;
+}
+/* admin-category.css */
+
+/* Container */
+.container {
+    max-width: 100%;
+    margin: 50px auto;
+    padding: 0 20px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Heading */
+.heading {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+/* Success message */
+.success-message {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Table wrapper for scroll */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+/* Dark themed full-width table */
+.category-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+.category-table th {
+    background-color: #1f2937; /* dark header */
+    padding: 15px;
+    font-weight: 600;
+    text-align: left;
+}
+
+/* Body rows */
+.category-table td {
+    padding: 15px;
+    background-color: #374151; /* dark body */
+    color: #f9fafb;
+    border-bottom: 1px solid #4b5563;
+}
+
+/* Hover effect */
+.category-table tr:hover td {
+    background-color: #4b5563;
+}
+
+/* Rounded corners for first/last th/td */
+.category-table thead th:first-child {
+    border-top-left-radius: 10px;
+}
+.category-table thead th:last-child {
+    border-top-right-radius: 10px;
+}
+.category-table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+.category-table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+/* Empty message */
+.no-data {
+    text-align: center;
+    color: #d1d5db;
+    font-style: italic;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .category-table th,
+    .category-table td {
+        padding: 10px;
+    }
+    .heading {
+        font-size: 22px;
+    }
 }
