@@ -33,6 +33,10 @@ Route::middleware('admin')->group(function () {
  Route::get('/view_product', [AdminController::class, 'viewProduct'])->name('admin.viewproduct');
 
  Route::get('/delete_product/{id}', [AdminController::class, 'deleteProduct'])->name('admin.deleteproduct');
+ Route::get('/update_product/{id}', [AdminController::class, 'updateProduct'])->name('admin.updateproduct');
+Route::post('/update_product/{id}', [AdminController::class, 'postUpdateProduct'])->name('admin.postupdateproduct');
+
+
 
 });
 

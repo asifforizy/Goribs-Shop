@@ -89,17 +89,64 @@ class AdminController extends Controller
         return view('admin.viewproduct', compact('products'));
     }
 
-     public function deleteProduct($id)
+    public function deleteProduct($id)
     {
         $product = Product::findOrFail($id);
+        $image_path = public_path('products/' . $product->product_image);
+        if (file_exists($image_path)) {
+            unlink($image_path);
+        }
         $product->delete();
         return redirect()->back()->with('delete_product_message', 'Deleted successfully');
     }
 
 
+    public function updateProduct($id)
+    {
+        $product = Product::findOrFail($id);
+        $categories = Category::all();
+        return view('admin.updateproduct', compact('product', 'categories'));
+    }
 
 
+    public function postUpdateProduct(Request $request, $id)
+    {
+        $request->validate([
+            'product_title' => 'required',
+            'product_quantity' => 'required|numeric',
+            'product_price' => 'required|numeric',
+            'product_category' => 'required',
+            'product_image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048'
+        ]);
 
+        $product = Product::findOrFail($id);
 
+        $product->product_title = $request->product_title;
+        $product->product_quantity = $request->product_quantity;
+        $product->product_price = $request->product_price;
+        $product->product_category = $request->product_category;
 
+        // Update image (optional)
+        if ($request->hasFile('product_image')) {
+
+            // Delete old image
+            if ($product->product_image) {
+                $old_path = public_path('products/' . $product->product_image);
+                if (file_exists($old_path)) {
+                    unlink($old_path);
+                }
+            }
+
+            $image = $request->file('product_image');
+            $imagename = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('products'), $imagename);
+
+            $product->product_image = $imagename;
+        }
+
+        $product->save();
+
+        return redirect()->route('admin.viewproduct')
+            ->with('product_message', 'Product updated successfully');
+    }
 }

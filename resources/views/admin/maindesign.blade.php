@@ -133,6 +133,7 @@
                 @yield('update_category')
                 @yield('add_product')
                 @yield('view_product')
+                @yield('update_product')
             </section>
 
             <footer class="footer">
