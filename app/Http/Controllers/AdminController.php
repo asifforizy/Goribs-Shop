@@ -65,16 +65,18 @@ class AdminController extends Controller
 
         $image = $request->product_image;
         if ($image) {
-            $imagename = time() .'.'. $image->getClientOriginalExtension();
+            $imagename = time().'.'.$image->getClientOriginalExtension();
             $product->product_image = $imagename;
         }
+        $product->product_category=$request->product_category;
         $product->save();
-
-
         if($image &&$product->save()){
             $request->product_image->move('products',$image);
         }
 
         return redirect()->back()->with('product_message','Product added successfully');
     }
+
+
+    
 }

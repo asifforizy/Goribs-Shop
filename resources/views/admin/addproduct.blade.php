@@ -14,11 +14,14 @@
             <input type="number" name="product_quantity" placeholder="Product quantity">
             <input type="number" name="product_price" placeholder="Product price">
             
-            <select name="category_id">
-                @foreach ($categories as $category)
-                <option value="{{ $category->id }}">{{ $category->category }}</option>
-                @endforeach
-            </select>
+            <select name="product_category">
+    <option value="">Select Category</option>
+    @foreach ($categories as $category)
+        <option value="{{ $category->category }}">
+            {{ $category->category }}
+        </option>
+    @endforeach
+</select>
             <input type="file" name="product_image" >
             <input type="submit" name="submit" value="Add Product">
         </form>
