@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <!-- Basic -->
     <meta charset="utf-8" />
@@ -49,7 +50,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav  ">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ route('index') }}">Home <span
+                                    class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="shop.html">
@@ -94,7 +96,8 @@
                             </a>
                         @endif
                         <a href="{{ route('cartproducts') }}">
-                            <i class="fa fa-shopping-bag" aria-hidden="true"><span class="count">{{ $count }}</span></i>
+                            <i class="fa fa-shopping-bag" aria-hidden="true"><span
+                                    class="count">{{ $count }}</span></i>
                         </a>
                         <form class="form-inline ">
                             <button class="btn nav_search-btn" type="submit">
@@ -109,33 +112,37 @@
         <!-- slider section -->
 
         <section class="slider_section">
-            <div class="slider_container">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-md-7">
-                                        <div class="detail-box">
-                                            <h1>
-                                                Welcome To Our <br>
-                                                Gift Shop
-                                            </h1>
-                                            <p>
-                                                Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet non
-                                                necessitatibus error distinctio mollitia suscipit. Nostrum fugit
-                                                doloribus consequatur distinctio esse, possimus maiores aliquid repellat
-                                                beatae cum, perspiciatis enim, accusantium perferendis.
-                                            </p>
-                                            <a href="">
-                                                Contact Us
-                                            </a>
+            @if (!Request::is('cartproducts'))
+                <div class="slider_container">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <div class="detail-box">
+                                                <h1>
+                                                    Welcome To Our <br>
+                                                    Gift Shop
+                                                </h1>
+                                                <p>
+                                                    Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet
+                                                    non
+                                                    necessitatibus error distinctio mollitia suscipit. Nostrum fugit
+                                                    doloribus consequatur distinctio esse, possimus maiores aliquid
+                                                    repellat
+                                                    beatae cum, perspiciatis enim, accusantium perferendis.
+                                                </p>
+                                                <a href="">
+                                                    Contact Us
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-5 ">
-                                        <div class="img-box">
-                                            <img style="width:600px" src="front_end/images/image3.jpeg"
-                                                alt="" />
+                                        <div class="col-md-5 ">
+                                            <div class="img-box">
+                                                <img style="width:600px" src="front_end/images/image3.jpeg"
+                                                    alt="" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -143,7 +150,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            @endif
         </section>
 
         <!-- end slider section -->
@@ -153,10 +160,10 @@
     <!-- shop section -->
 
     <section class="shop_section layout_padding">
-       @yield('index')
-       @yield('product_card')
-       @yield('all_products')
-       @yield('view-cart')
+        @yield('index')
+        @yield('product_card')
+        @yield('all_products')
+        @yield('view-cart')
     </section>
 
     <!-- end shop section -->
@@ -168,7 +175,7 @@
 
 
     <!-- contact section -->
-
+ @if (!Request::is('cartproducts'))
     <section class="contact_section ">
         <div class="container px-0">
             <div class="heading_container ">
@@ -213,6 +220,8 @@
             </div>
         </div>
     </section>
+
+    @endif
 
     <br><br><br>
 

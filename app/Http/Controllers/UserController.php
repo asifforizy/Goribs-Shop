@@ -69,9 +69,6 @@ class UserController extends Controller
 
     public function  addToCart($id)
     {
-
-
-
         $product = Product::findOrFail($id);
         $product_cart = new ProductCart();
         $product_cart->user_id = Auth::id();
@@ -95,5 +92,12 @@ class UserController extends Controller
         }
 
         return view('viewcartproducts', compact('count', 'cart'));
+    }
+
+    public function removeCartProduct($id)
+    {
+        $product_cart = ProductCart::findOrFail($id);
+        $product_cart->delete();
+        return redirect()->back();
     }
 }

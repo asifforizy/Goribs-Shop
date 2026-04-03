@@ -30,7 +30,7 @@
 
                         <!-- Actions -->
                         <div class="cart-actions">
-                            <a href="" class="btn-remove">Remove</a>
+                            <a href="{{ route('removecartproduct',$item->id) }}" class="btn-remove">Remove</a>
                         </div>
 
                     </div>
