@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 
 Route::get('/',[UserController::class, 'home'])->name('index');
+Route::get('/product_details/{id}',[UserController::class, 'productDetails'])->name('product_details');
 
 Route::get('/dashboard', [UserController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
