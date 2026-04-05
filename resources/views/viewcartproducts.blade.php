@@ -13,29 +13,50 @@
 
         @if ($cart->count() > 0)
             <div class="cart-grid">
-                @foreach ($cart as $item)
+
+                @php
+                    $price = 0;
+
+                @endphp
+                @foreach ($cart as $cart_product)
                     <div class="cart-card">
 
                         <!-- Product Image -->
                         <div class="cart-img">
-                            <img src="{{ asset('products/' . $item->product->product_image) }}" alt="">
+                            <img src="{{ asset('products/' . $cart_product->product->product_image) }}" alt="">
                         </div>
 
                         <!-- Product Info -->
                         <div class="cart-info">
-                            <h3>{{ $item->product->product_title }}</h3>
+                            <h3>{{ $cart_product->product->product_title }}</h3>
 
-                            <p class="price">৳ {{ $item->product->product_price }}</p>
+                            <p class="price">৳ {{ $cart_product->product->product_price }}</p>
                         </div>
 
                         <!-- Actions -->
                         <div class="cart-actions">
-                            <a href="{{ route('removecartproduct',$item->id) }}" class="btn-remove">Remove</a>
+                            <a href="{{ route('removecartproduct', $cart_product->id) }}" class="btn-remove">Remove</a>
                         </div>
-
                     </div>
+
+                    @php
+                        $price = $price + $cart_product->product->product_price;
+                    @endphp
                 @endforeach
+                <div class="checkout-container">
+                    <div class="summary">
+                        <p class="sub-total">Sub Total: $ {{ $price }}</p>
+                        <p class="disclaimer">Excl. Tax and Delivery charge</p>
+                    </div>
+
+                    <div class="actions">
+                        <a href="#" class="continue-link">Continue Shipping</a>
+                        <a href="{{ route('confirm_order') }}"><button class="checkout-btn">Go to Checkout</button></a>
+                    </div>
+                </div>
             </div>
+
+            
         @else
             <div class="empty-cart">
                 <h3>Your cart is empty 😢</h3>

@@ -73,24 +73,22 @@
                         </li>
                     </ul>
                     <div class="user_option">
-
-
                         @if (Auth::check())
                             <a href="{{ route('dashboard') }}">
-                                <span>
+                                <span class="dash" >
                                     Dashboard
                                 </span>
                             </a>
                         @else
                             <a href="{{ route('login') }}">
                                 <i class="fa fa-user" aria-hidden="true"></i>
-                                <span>
+                                <span class="dash">
                                     Login
                                 </span>
                             </a>
                             <a href="{{ route('register') }}">
                                 <i class="fa fa-user" aria-hidden="true"></i>
-                                <span>
+                                <span class="dash">
                                     Register
                                 </span>
                             </a>
@@ -99,11 +97,6 @@
                             <i class="fa fa-shopping-bag" aria-hidden="true"><span
                                     class="count">{{ $count }}</span></i>
                         </a>
-                        <form class="form-inline ">
-                            <button class="btn nav_search-btn" type="submit">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            </button>
-                        </form>
                     </div>
                 </div>
             </nav>
@@ -112,7 +105,7 @@
         <!-- slider section -->
 
         <section class="slider_section">
-            @if (!Request::is('cartproducts'))
+            @if (!request()->routeIs('cartproducts'))
                 <div class="slider_container">
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
@@ -123,24 +116,19 @@
                                             <div class="detail-box">
                                                 <h1>
                                                     Welcome To Our <br>
-                                                    Gift Shop
+                                                    Goribs Shop
                                                 </h1>
                                                 <p>
-                                                    Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet
-                                                    non
-                                                    necessitatibus error distinctio mollitia suscipit. Nostrum fugit
-                                                    doloribus consequatur distinctio esse, possimus maiores aliquid
-                                                    repellat
-                                                    beatae cum, perspiciatis enim, accusantium perferendis.
+                                                    Goribs Shop is the most reliable clothing brand in Bangladesh. Where you can buy best items in cheap price.
                                                 </p>
-                                                <a href="">
+                                                <a class="hero-btn" href="">
                                                     Contact Us
                                                 </a>
                                             </div>
                                         </div>
                                         <div class="col-md-5 ">
-                                            <div class="img-box">
-                                                <img style="width:600px" src="front_end/images/image3.jpeg"
+                                            <div class="img-hero">
+                                                <img style="width:600px" src="front_end/images/image3.jpg"
                                                     alt="" />
                                             </div>
                                         </div>
@@ -164,6 +152,7 @@
         @yield('product_card')
         @yield('all_products')
         @yield('view-cart')
+        @yield('checkout')
     </section>
 
     <!-- end shop section -->
@@ -256,8 +245,7 @@
                             ABOUT US
                         </h6>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-                            consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
+                            Goribs Shop is the most reliable clothing brand in Bangladesh. Where you can buy best items in cheap price.
                         </p>
                     </div>
                     <div class="col-md-6 col-lg-3">
@@ -278,8 +266,7 @@
                             NEED HELP
                         </h6>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-                            consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
+                            If you need any kind of help, contact our customer service. We are always there to help you. Our first priority is you.
                         </p>
                     </div>
                     <div class="col-md-6 col-lg-3">
@@ -289,15 +276,15 @@
                         <div class="info_link-box">
                             <a href="">
                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <span> Gb road 123 london Uk </span>
+                                <span> Savar, Dhaka, Bangladesh </span>
                             </a>
                             <a href="">
                                 <i class="fa fa-phone" aria-hidden="true"></i>
-                                <span>+01 12345678901</span>
+                                <span>+8801626950127</span>
                             </a>
                             <a href="">
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                                <span> demo@gmail.com</span>
+                                <span> goribsshop@gmail.com</span>
                             </a>
                         </div>
                     </div>
@@ -309,7 +296,7 @@
             <div class="container">
                 <p>
                     &copy; <span id="displayYear"></span> All Rights Reserved By
-                    <a href="https://html.design/">Web Tech Knowledge</a>
+                    <a href="https://html.design/">Goribs Shop</a>
                 </p>
             </div>
         </footer>

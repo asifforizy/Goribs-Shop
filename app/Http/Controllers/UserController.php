@@ -100,4 +100,18 @@ class UserController extends Controller
         $product_cart->delete();
         return redirect()->back();
     }
+
+    public function confirmOrder()
+{
+    if (Auth::check()) {
+        $count = ProductCart::where('user_id', Auth::id())->count();
+
+        $cart = ProductCart::where('user_id', Auth::id())->get();
+    } else {
+        $count = 0;
+        $cart = [];
+    }
+
+    return view('checkout', compact('cart', 'count'));
+}
 }
