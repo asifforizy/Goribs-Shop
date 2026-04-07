@@ -53,6 +53,9 @@ Route::post('/update_product/{id}', [AdminController::class, 'postUpdateProduct'
 
 
 
+Route::get('/view_order', [AdminController::class, 'viewOrder'])->name('admin.vieworder');
+
+
 });
 
 require __DIR__ . '/auth.php';

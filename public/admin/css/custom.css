@@ -76,3 +76,136 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+
+
+
+/* order view */
+
+.admin-orders {
+    padding: 20px;
+    color: #fff;
+}
+
+.page-title {
+    margin-bottom: 20px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1e1e2f;
+}
+
+.orders-table th,
+.orders-table td {
+    padding: 12px;
+    border-bottom: 1px solid #333;
+    text-align: left;
+}
+
+.orders-table th {
+    background: #111;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.status.pending {
+    background: orange;
+}
+
+.status.delivered {
+    background: green;
+}
+
+.status.cancelled {
+    background: red;
+}
+
+.actions .btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 2px;
+    display: inline-block;
+}
+
+.btn.delivered {
+    background: #28a745;
+    color: #fff;
+}
+
+.btn.cancel {
+    background: #dc3545;
+    color: #fff;
+}
+
+.done {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.cancelled {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.no-data {
+    text-align: center;
+    padding: 20px;
+    color: #aaa;
+}
+
+.success-msg {
+    background: #28a745;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+
+/* TABLE CELL */
+.product-image-cell {
+    text-align: center;
+}
+
+/* IMAGE BOX */
+.product-image-box {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+/* IMAGE */
+.product-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.product-image-box:hover img {
+    transform: scale(1.1);
+}
+
+.product-image-box:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    border-color: #2563eb;
+}

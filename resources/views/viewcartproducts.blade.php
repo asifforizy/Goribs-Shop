@@ -59,7 +59,7 @@
             
         @else
             <div class="empty-cart">
-                <h3>Your cart is empty 😢</h3>
+                <h3>Your cart is empty!</h3>
                 <a href="{{ route('viewallproducts') }}" class="shop-btn">Shop Now</a>
             </div>
         @endif
