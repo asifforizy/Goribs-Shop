@@ -153,8 +153,37 @@ class AdminController extends Controller
     }
 
 
-    public function viewOrder(){
+    public function viewOrder()
+    {
         $orders = Order::all();
         return view('admin.vieworders', compact('orders'));
+    }
+
+
+    public function markDelivered($id)
+    {
+        $order = Order::find($id);
+
+        if ($order) {
+            $order->status = 'delivered';
+            $order->save();
+            return redirect()->back()->with('message', 'Order marked as Delivered ✅');
+        }
+
+        return redirect()->back()->with('message', 'Order not found ❌');
+    }
+
+
+    public function markCancelled($id)
+    {
+        $order = Order::find($id);
+
+        if ($order) {
+            $order->status = 'cancelled';
+            $order->save();
+            return redirect()->back()->with('message', 'Order Cancelled ❌');
+        }
+
+        return redirect()->back()->with('message', 'Order not found ❌');
     }
 }

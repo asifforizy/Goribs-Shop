@@ -209,3 +209,7 @@
     box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     border-color: #2563eb;
 }
+
+.status.pending { background: yellow; color: black; padding: 3px 8px; border-radius: 5px; }
+.status.delivered { background: green; color: white; padding: 3px 8px; border-radius: 5px; }
+.status.cancelled { background: red; color: white; padding: 3px 8px; border-radius: 5px; }

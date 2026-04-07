@@ -11,7 +11,7 @@ use App\Models\Order;
 
 class UserController extends Controller
 {
-    public function index()
+    public function dashboard()
     {
         if (!Auth::check()) {
             return redirect()->route('login');
@@ -22,8 +22,11 @@ class UserController extends Controller
         if ($user->user_type == "admin") {
             return view("admin.dashboard");
         }
+        else if($user->user_type == "user") {
+            return view("dashboard");
+        }
 
-        return redirect()->route('dashboard');
+        
     }
 
 
@@ -143,5 +146,10 @@ class UserController extends Controller
         }
         
         return redirect()->back()->with("confirm_message", "Order confirmed");
+    }
+
+    public function myOrders(){
+        $orders = Order::where('user_id',Auth::id())->get();
+        return view('viewmyorders',compact('orders'));
     }
 }
