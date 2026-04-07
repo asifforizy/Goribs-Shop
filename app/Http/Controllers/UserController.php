@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use App\Models\ProductCart;
+use App\Models\Order;
 
 
 class UserController extends Controller
@@ -102,16 +103,45 @@ class UserController extends Controller
     }
 
     public function orderDetails()
-{
-    if (Auth::check()) {
-        $count = ProductCart::where('user_id', Auth::id())->count();
+    {
+        if (Auth::check()) {
+            $count = ProductCart::where('user_id', Auth::id())->count();
 
-        $cart = ProductCart::where('user_id', Auth::id())->get();
-    } else {
-        $count = 0;
-        $cart = [];
+            $cart = ProductCart::where('user_id', Auth::id())->get();
+        } else {
+            $count = 0;
+            $cart = [];
+        }
+        return view('checkout', compact('cart', 'count'));
     }
 
-    return view('checkout', compact('cart', 'count'));
-}
+
+
+    public function confirmOrder(Request $request)
+    {
+
+        $cart_product_id = ProductCart::where('user_id', Auth::id())->get();
+        $name = $request->receiver_name;
+        $address = $request->receiver_address;
+        $phone = $request->receiver_phone;
+
+
+        foreach ($cart_product_id as  $cart_product) {
+            $order = new Order();
+            $order->receiver_name = $name;
+            $order->receiver_address = $address;
+            $order->receiver_phone = $phone;
+            $order->user_id  =  Auth::id();
+            $order->product_id =  $cart_product->product_id;
+            $order->save();
+        }
+        $cart = ProductCart::where('user_id',Auth::id())->get();
+        foreach( $cart as $cart ){
+
+        $cart_id = ProductCart::findOrFail($cart->id);
+        $cart_id->delete();
+        }
+        
+        return redirect()->back()->with("confirm_message", "Order confirmed");
+    }
 }
