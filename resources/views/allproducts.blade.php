@@ -30,9 +30,10 @@
                         <form action="{{ route('add_to_cart', $product->id) }}" method="POST">
                             @csrf
                             <div class="cart-btn-container">
-                                <button type="submit" class="add-cart-btn">
-                                    🛒 Add to Cart
-                                </button>
+                                <a href="{{ route('add_to_cart',$product->id)  }}"> 
+                                    <button type="submit" class="add-cart-btn">
+                                        🛒 Add to Cart
+                                    </button></a>
                             </div>
                         </form>
 

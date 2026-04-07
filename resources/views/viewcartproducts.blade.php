@@ -46,12 +46,12 @@
                 <div class="checkout-container">
                     <div class="summary">
                         <p class="sub-total">Sub Total: $ {{ $price }}</p>
-                        <p class="disclaimer">Excl. Tax and Delivery charge</p>
+                        
                     </div>
 
                     <div class="actions">
                         <a href="#" class="continue-link">Continue Shipping</a>
-                        <a href="{{ route('confirm_order') }}"><button class="checkout-btn">Go to Checkout</button></a>
+                        <a href="{{ route('order-details') }}"><button class="checkout-btn">Checkout</button></a>
                     </div>
                 </div>
             </div>

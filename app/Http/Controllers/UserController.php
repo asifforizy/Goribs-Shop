@@ -22,7 +22,7 @@ class UserController extends Controller
             return view("admin.dashboard");
         }
 
-        return redirect()->route('home');
+        return redirect()->route('dashboard');
     }
 
 
@@ -84,7 +84,7 @@ class UserController extends Controller
         if (Auth::check()) {
             $count = ProductCart::where('user_id', Auth::id())->count();
 
-            $cart = ProductCart::with('product') // ✅ IMPORTANT
+            $cart = ProductCart::with('product')
                 ->where('user_id', Auth::id())
                 ->get();
         } else {
@@ -101,7 +101,7 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-    public function confirmOrder()
+    public function orderDetails()
 {
     if (Auth::check()) {
         $count = ProductCart::where('user_id', Auth::id())->count();

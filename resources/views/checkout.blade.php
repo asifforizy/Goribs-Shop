@@ -2,10 +2,10 @@
 
 @section('checkout')
 
-<div class="checkout-container">
+<div class="order-details-container">
 
     <!-- LEFT: FORM -->
-    <div class="checkout-left">
+    <div class="order-left">
         <h3>Shipping Details</h3>
 
         <form action="{{ route('confirm_order') }}" method="POST">
@@ -18,23 +18,23 @@
 
             <div class="form-group">
                 <label>Address</label>
-                <textarea name="address" placeholder="Enter your full address" required></textarea>
+                <textarea name="receiver_address" placeholder="Enter your full address" required></textarea>
             </div>
 
             <div class="form-group">
                 <label>Phone</label>
-                <input type="text" name="phone" placeholder="01XXXXXXXXX" required>
+                <input type="text" name="receiver_phone" placeholder="01XXXXXXXXX" required>
             </div>
 
             <button type="submit" class="order-btn">
-                ✅ Place Order
+                Confirm Order
             </button>
         </form>
     </div>
 
 
     <!-- RIGHT: ORDER SUMMARY -->
-    <div class="checkout-right">
+    <div class="order-right">
         <h3>Order Summary</h3>
 
         @php $total = 0; @endphp
