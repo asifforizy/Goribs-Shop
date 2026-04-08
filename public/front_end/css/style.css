@@ -59,6 +59,9 @@ body {
 }
 
 /*header section*/
+
+
+
 .hero_area {
     padding: 0 45px;
 }
@@ -66,6 +69,7 @@ body {
 .hero_area.sub_pages {
     height: auto;
 }
+
 
 #navbarSupportedContent {
     width: 100%;
@@ -236,8 +240,8 @@ a:focus {
 /*end header section*/
 .slider_section .slider_container {
     color: #fefefe;
-    background-color: #000000;
-    background-color: black;
+    background-color: skyblue;
+    
     padding: 25px;
     border-radius: 0 0 15px 15px;
 }
@@ -1241,11 +1245,7 @@ a:focus {
 /* order */
 
 /* GLOBAL */
-body {
-    background: #f5f7fb;
-    font-family: 'Segoe UI', sans-serif;
-    color: #1e293b;
-}
+
 
 /* SUCCESS MESSAGE */
 .scs-msg {
@@ -1418,9 +1418,5 @@ body {
         position: static;
     }
 }
-
-
-/* view my border */
-
 
 

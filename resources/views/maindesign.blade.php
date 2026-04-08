@@ -71,34 +71,45 @@
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact Us</a>
                         </li>
-                    </ul>
-                    <div class="user_option">
+
                         @if (Auth::check())
-                            <a href="{{ route('dashboard') }}">
-                                <span class="dash">
-                                    Dashboard
-                                </span>
-                            </a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('dashboard') }}">
+                                    <span>
+                                        Dashboard
+                                    </span>
+                                </a>
+                            </li>
                         @else
-                            <a href="{{ route('login') }}">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="dash">
-                                    Login
-                                </span>
-                            </a>
-                            <a href="{{ route('register') }}">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="dash">
-                                    Register
-                                </span>
-                            </a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <span>
+                                        Login
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <span class="dash">
+                                        Register
+                                    </span>
+                                </a>
+                            </li>
                         @endif
-                        <a href="{{ route('cartproducts') }}">
-                            <i class="fa fa-shopping-bag" aria-hidden="true"><span class="count">
-                                    {{ $count }}
-                                </span></i>
-                        </a>
-                    </div>
+                        <li class="nav-item">
+                            <a href="{{ route('cartproducts') }}">
+                                <i class="fa fa-shopping-bag" aria-hidden="true"><span class="count">
+                                        {{ $count }}
+                                    </span></i>
+                            </a>
+                        </li>
+                    </ul>
+
+
+
+
                 </div>
             </nav>
         </header>
@@ -143,7 +154,6 @@
             @endif
         </section>
 
-        <!-- end slider section -->
     </div>
     <!-- end hero area -->
 

@@ -213,3 +213,111 @@
 .status.pending { background: yellow; color: black; padding: 3px 8px; border-radius: 5px; }
 .status.delivered { background: green; color: white; padding: 3px 8px; border-radius: 5px; }
 .status.cancelled { background: red; color: white; padding: 3px 8px; border-radius: 5px; }
+
+
+/* view category */
+
+/* Main Container */
+.container {
+    padding: 30px;
+    background: #0f172a;
+    border-radius: 14px;
+    margin-top: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+/* Heading */
+.heading {
+    font-size: 28px;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 20px;
+}
+
+/* Success Message */
+.success-message {
+    background: #14532d;
+    color: #bbf7d0;
+    padding: 14px 18px;
+    border-left: 5px solid #22c55e;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* Table Wrapper */
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    background: #1e293b;
+    box-shadow: inset 0 0 0 1px #334155;
+}
+
+/* Table */
+.category-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+/* Header */
+.category-table thead {
+    background: #020617;
+}
+
+.category-table th {
+    padding: 16px;
+    text-align: left;
+    color: #f1f5f9;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 1px solid #334155;
+}
+
+/* Body */
+.category-table td {
+    padding: 16px;
+    color: #cbd5e1;
+    border-bottom: 1px solid #334155;
+    font-size: 15px;
+}
+
+/* Row Hover */
+.category-table tbody tr:hover {
+    background: #334155;
+    transition: 0.2s ease;
+}
+
+/* No Data */
+.no-data {
+    text-align: center;
+    padding: 20px;
+    color: #94a3b8;
+    font-style: italic;
+}
+
+/* Action Links */
+.category-table td a {
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 12px;
+    transition: 0.2s ease;
+}
+
+/* Delete */
+.category-table td a:first-child {
+    color: #f87171;
+}
+
+.category-table td a:first-child:hover {
+    color: #ef4444;
+}
+
+/* Update */
+.category-table td a:last-child {
+    color: #4ade80;
+}
+
+.category-table td a:last-child:hover {
+    color: #22c55e;
+}
