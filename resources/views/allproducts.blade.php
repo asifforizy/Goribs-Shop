@@ -12,7 +12,6 @@
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="box">
 
-                        <!-- Product Link -->
                         <a href="{{ route('product_details', $product->id) }}">
                             <div class="img-box">
                                 <img src="{{ asset('products/' . $product->product_image) }}" alt="">
@@ -26,16 +25,13 @@
                             </div>
                         </a>
 
-                        <!-- Add to Cart Button -->
-                        <form action="{{ route('add_to_cart', $product->id) }}" method="POST">
-                            @csrf
-                            <div class="cart-btn-container">
-                                <a href="{{ route('add_to_cart',$product->id)  }}"> 
-                                    <button type="submit" class="add-cart-btn">
-                                        🛒 Add to Cart
-                                    </button></a>
-                            </div>
-                        </form>
+                        <div class="cart-btn-container">
+                            <a href="{{ route('add_to_cart', $product->id) }}">
+                                <button type="submit" class="add-cart-btn">
+                                🛒 Add to Cart
+                            </button>
+                            </a>
+                        </div>
 
                     </div>
                 </div>

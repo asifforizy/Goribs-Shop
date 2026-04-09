@@ -134,9 +134,11 @@
                                                     Goribs Shop is the most reliable clothing brand in Bangladesh. Where
                                                     you can buy best items in cheap price.
                                                 </p>
-                                                <a class="hero-btn" href="">
+                                                <div style="width: fit-content">
+                                                    <a class="add-cart-btn" href="">
                                                     Contact Us
                                                 </a>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-5 ">

@@ -32,7 +32,7 @@
         <div class="product-info"><strong>Quantity:</strong> {{ $product->product_quantity }}</div>
     </div>
 
-    <a href="{{ route('add_to_cart',$product->id) }}"><button class="product-btn">Add to Cart</button></a>
+    <a href="{{ route('add_to_cart',$product->id) }}"><button class="add-cart-btn">Add to Cart</button></a>
 
 </div>
 @endsection
