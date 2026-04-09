@@ -21,12 +21,9 @@ class UserController extends Controller
 
         if ($user->user_type == "admin") {
             return view("admin.dashboard");
-        }
-        else if($user->user_type == "user") {
+        } else if ($user->user_type == "user") {
             return view("dashboard");
         }
-
-        
     }
 
 
@@ -138,22 +135,23 @@ class UserController extends Controller
             $order->product_id =  $cart_product->product_id;
             $order->save();
         }
-        $cart = ProductCart::where('user_id',Auth::id())->get();
-        foreach( $cart as $cart ){
+        $cart = ProductCart::where('user_id', Auth::id())->get();
+        foreach ($cart as $cart) {
 
-        $cart_id = ProductCart::findOrFail($cart->id);
-        $cart_id->delete();
+            $cart_id = ProductCart::findOrFail($cart->id);
+            $cart_id->delete();
         }
-        
+
         return redirect()->back()->with("confirm_message", "Order confirmed");
     }
 
-    public function myOrders(){
-        $orders = Order::where('user_id',Auth::id())->get();
-        return view('viewmyorders',compact('orders'));
+    public function myOrders()
+    {
+        $orders = Order::where('user_id', Auth::id())->get();
+        return view('viewmyorders', compact('orders'));
     }
 
-        public function shop()
+    public function shop()
     {
         if (Auth::check()) {
             $count = ProductCart::where('user_id', Auth::id())->count();
@@ -163,6 +161,40 @@ class UserController extends Controller
         $products = Product::all();
         return view('allproducts', compact('products', 'count'));
     }
+
+    public function whyUs()
+    {
+        if (Auth::check()) {
+            $count = ProductCart::where('user_id', Auth::id())->count();
+        } else {
+            $count = '';
+        }
+        $products = Product::all();
+        return view('why', compact('products', 'count'));
+    }
+
+
+    public function testimonial()
+    {
+        if (Auth::check()) {
+            $count = ProductCart::where('user_id', Auth::id())->count();
+        } else {
+            $count = '';
+        }
+        $products = Product::all();
+        return view('testimonial', compact('products', 'count'));
+    }
+    public function contact()
+    {
+        if (Auth::check()) {
+            $count = ProductCart::where('user_id', Auth::id())->count();
+        } else {
+            $count = '';
+        }
+        $products = Product::all();
+        return view('contact', compact('products', 'count'));
+    }
+
 
 
 
