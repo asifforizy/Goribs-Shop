@@ -39,7 +39,7 @@
 
         </div>
         <div class="btn-box">
-            <a href="{{ route('index') }}">
+            <a class="latest-btn" href="{{ route('index') }}">
                 View Latest Products
             </a>
         </div>

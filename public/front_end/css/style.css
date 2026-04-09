@@ -99,9 +99,14 @@ body {
 }
 
 #navbarSupportedContent .nav-item.active .nav-link { 
-    background: linear-gradient(90deg, #ff7f50, #ff4d6d);
+    background: linear-gradient(90deg, #f46834, #e92347);
     color: white;
     border-radius: 8px;
+}
+
+.latest-btn{
+     background: linear-gradient(90deg, #f46834, #e92347);
+     color: white;
 }
 
 a,

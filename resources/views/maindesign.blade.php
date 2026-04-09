@@ -52,8 +52,8 @@
                         <li class="nav-item {{ request()->routeIs('index') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('index') }}">Home</a>
                         </li>
-                        <li class="nav-item {{ request()->routeIs('allproducts') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('allproducts') }}">Shop</a>
+                        <li class="nav-item {{ request()->routeIs('viewallproducts') ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('viewallproducts') }}">Shop</a>
                         </li>
                         <li class="nav-item {{ request()->routeIs('why') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('why') }}">Why Us</a>
