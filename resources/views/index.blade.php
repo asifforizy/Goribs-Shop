@@ -117,13 +117,18 @@
 
     {{-- SLIDER CSS --}}
     <style>
+        /* ===================== HERO SLIDER ===================== */
         .hero-slider {
             position: relative;
-            width: calc(100% - 500px);
+            width: 90%;
+            /* responsive width */
+            max-width: 1200px;
+            /* optional max width */
             height: 65vh;
             margin: 20px auto;
             overflow: hidden;
-            border-radius: 25px ;
+            border-radius: 25px;
+            /* rounded corners */
         }
 
         .slide {
@@ -134,6 +139,7 @@
             background-position: center;
             opacity: 0;
             transition: opacity 1s ease-in-out;
+            border-radius: 25px;
         }
 
         .slide.active {
@@ -147,7 +153,8 @@
             background: rgba(0, 0, 0, 0.45);
             display: flex;
             align-items: center;
-            padding-left: 8%;
+            padding: 0 5%;
+            /* responsive padding */
         }
 
         .content {
@@ -157,12 +164,12 @@
         }
 
         .content h1 {
-            font-size: 60px;
+            font-size: 3rem;
             margin-bottom: 20px;
         }
 
         .content p {
-            font-size: 18px;
+            font-size: 1rem;
             margin-bottom: 30px;
         }
 
@@ -189,16 +196,16 @@
         }
 
         .prev {
-            left: 30px;
+            left: 20px;
         }
 
         .next {
-            right: 30px;
+            right: 20px;
         }
 
         .dots {
             position: absolute;
-            bottom: 30px;
+            bottom: 20px;
             width: 100%;
             text-align: center;
             z-index: 2;
@@ -227,6 +234,69 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        /* ===================== RESPONSIVE STYLING ===================== */
+        @media (max-width: 992px) {
+            .hero-slider {
+                height: 55vh;
+            }
+
+            .content h1 {
+                font-size: 2.5rem;
+            }
+
+            .content p {
+                font-size: 0.95rem;
+            }
+
+            .arrow {
+                font-size: 28px;
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-slider {
+                height: 50vh;
+            }
+
+            .overlay {
+                justify-content: center;
+                /* center content on smaller screens */
+            }
+
+            .content {
+                max-width: 90%;
+                text-align: center;
+            }
+
+            .content h1 {
+                font-size: 2rem;
+            }
+
+            .content p {
+                font-size: 0.9rem;
+            }
+
+            .arrow {
+                font-size: 24px;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-slider {
+                height: 40vh;
+            }
+
+            .content h1 {
+                font-size: 1.5rem;
+            }
+
+            .content p {
+                font-size: 0.8rem;
             }
         }
     </style>
