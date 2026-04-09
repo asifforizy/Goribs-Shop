@@ -54,7 +54,7 @@
                                     class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="shop.html">
+                            <a class="nav-link" href="{{ route('allproducts') }}">
                                 Shop
                             </a>
                         </li>

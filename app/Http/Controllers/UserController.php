@@ -152,4 +152,18 @@ class UserController extends Controller
         $orders = Order::where('user_id',Auth::id())->get();
         return view('viewmyorders',compact('orders'));
     }
+
+        public function shop()
+    {
+        if (Auth::check()) {
+            $count = ProductCart::where('user_id', Auth::id())->count();
+        } else {
+            $count = '';
+        }
+        $products = Product::all();
+        return view('allproducts', compact('products', 'count'));
+    }
+
+
+
 }
