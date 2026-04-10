@@ -2,38 +2,80 @@
 
 <base href="/public">
 
-
 @section('product_card')
 
 @if (session('cart_message'))
-    <div class="scs-msg">
+    <div class="alert alert-success text-center">
         {{ session('cart_message') }}
     </div>
 @endif
 
+<section class="product-details-section py-5">
+    <div class="container">
 
+        <a href="{{ route('index') }}" class="back-btn mb-4 d-inline-block">← Back to Shop</a>
 
+        <div class="row align-items-center g-5">
 
-<div class="product-container">
+            <!-- Product Image -->
+            <div class="col-lg-6">
+                <div class="product-image-box">
+                    <img src="{{ asset('products/'.$product->product_image) }}"
+                        alt="Product Image"
+                        class="img-fluid rounded-4 shadow-lg product-img">
+                </div>
+            </div>
 
-    <!-- Big Image -->
-    <a href="{{route('index')}}" class="back-btn">←</a>
-    <div class="image-container"><img src="{{ asset('products/'.$product->product_image) }}" alt="Product Image" class="product-img"></div>
+            <!-- Product Info -->
+            <div class="col-lg-6">
+                <div class="product-info-box">
 
-    <!-- Title + Price -->
-    <div class="title-price">
-        <h1 class="product-title" >{{ $product->product_title }}</h1>
-        <h1 class="product-price">$ {{ $product->product_price}}</h1>
+                    <span class="product-category-badge">
+                        {{ $product->product_category }}
+                    </span>
+
+                    <h1 class="product-title mt-3">
+                        {{ $product->product_title }}
+                    </h1>
+
+                    <h2 class="product-price mt-3">
+                        ${{ $product->product_price }}
+                    </h2>
+
+                    <p class="stock-text mt-2">
+                        <strong>Available Stock:</strong> {{ $product->product_quantity }}
+                    </p>
+
+                    <hr>
+
+                    <!-- Static Description -->
+                    <div class="product-description">
+                        <h5>Description</h5>
+                        <p>
+                            Premium quality product crafted with comfort, durability, and style in mind.
+                            Designed for everyday wear with modern aesthetics and reliable materials.
+                            Perfect for customers looking for both performance and fashion.
+                        </p>
+
+                        <ul>
+                            <li>✔ High Quality Material</li>
+                            <li>✔ Comfortable Fit</li>
+                            <li>✔ Durable & Long Lasting</li>
+                            <li>✔ Trendy Modern Design</li>
+                        </ul>
+                    </div>
+
+                    <a href="{{ route('add_to_cart',$product->id) }}">
+                        <button class="add-cart-btn mt-4">
+                            Add To Cart
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
     </div>
-    <hr>
-    <!-- Category + Quantity -->
-    <div class="category-quantity">
-        <div class="product-info"><strong>Category:</strong> {{ $product->product_category }}</div>
-        <div class="product-info"><strong>Quantity:</strong> {{ $product->product_quantity }}</div>
-    </div>
+</section>
 
-    <a href="{{ route('add_to_cart',$product->id) }}"><button class="add-cart-btn">Add to Cart</button></a>
-
-</div>
 @endsection
-
