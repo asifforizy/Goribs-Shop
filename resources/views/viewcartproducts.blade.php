@@ -45,12 +45,12 @@
                 @endforeach
                 <div class="checkout-container">
                     <div class="summary">
-                        <p class="sub-total">Sub Total: $ {{ $price }}</p>
+                        <p class="sub-total">Total: $ {{ $price }}</p>
                         
                     </div>
 
                     <div class="actions">
-                        <a href="#" class="continue-link">Continue Shipping</a>
+                        <a href="{{ route('viewallproducts') }}" class="continue-link">Continue Shopping</a>
                         <a href="{{ route('order-details') }}"><button class="checkout-btn">Checkout</button></a>
                     </div>
                 </div>
