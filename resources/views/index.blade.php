@@ -76,7 +76,7 @@
             </div>
 
             <div class="btn-box">
-                <a class="latest-btn" href="{{ route('viewallproducts') }}">View All Products</a>
+                <a class="view-latest-product" href="{{ route('viewallproducts') }}">View All Products</a>
             </div>
         </div>
     </section>

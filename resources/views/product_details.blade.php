@@ -13,7 +13,7 @@
 <section class="product-details-section py-5">
     <div class="container">
 
-        <a href="{{ route('index') }}" class="back-btn mb-4 d-inline-block">← Back to Shop</a>
+        <a href="{{ route('viewallproducts') }}" class="back-btn mb-4 d-inline-block">← Back to Shop</a>
 
         <div class="row align-items-center g-5">
 
