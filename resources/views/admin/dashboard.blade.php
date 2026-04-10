@@ -11,7 +11,7 @@
                                         <div class="icon"><i class="icon-user-1"></i></div><strong>New
                                             Clients</strong>
                                     </div>
-                                    <div class="number dashtext-1">27</div>
+                                    <div class="number dashtext-1">1453</div>
                                 </div>
                                 <div class="progress progress-template">
                                     <div role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0"
@@ -24,7 +24,7 @@
                                 <div class="progress-details d-flex align-items-end justify-content-between">
                                     <div class="title">
                                         <div class="icon"><i class="icon-contract"></i></div><strong>New
-                                            Projects</strong>
+                                            Orders</strong>
                                     </div>
                                     <div class="number dashtext-2">375</div>
                                 </div>
@@ -38,8 +38,7 @@
                             <div class="statistic-block block">
                                 <div class="progress-details d-flex align-items-end justify-content-between">
                                     <div class="title">
-                                        <div class="icon"><i class="icon-paper-and-pencil"></i></div><strong>New
-                                            Invoices</strong>
+                                        <div class="icon"><i class="icon-paper-and-pencil"></i></div><strong>Order Delivered</strong>
                                     </div>
                                     <div class="number dashtext-3">140</div>
                                 </div>
@@ -53,8 +52,7 @@
                             <div class="statistic-block block">
                                 <div class="progress-details d-flex align-items-end justify-content-between">
                                     <div class="title">
-                                        <div class="icon"><i class="icon-writing-whiteboard"></i></div><strong>All
-                                            Projects</strong>
+                                        <div class="icon"><i class="icon-writing-whiteboard"></i></div><strong>Order Cancel</strong>
                                     </div>
                                     <div class="number dashtext-4">41</div>
                                 </div>
