@@ -35,7 +35,7 @@
                             <input type="text" class="message-box" placeholder="Message" />
                         </div>
                         <div class="d-flex">
-                            <button>SEND</button>
+                            <button class="add-cart-btn">SEND</button>
                         </div>
                     </form>
                 </div>

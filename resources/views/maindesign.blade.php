@@ -212,7 +212,7 @@
                             </h5>
                             <form action="#">
                                 <input type="email" placeholder="Enter your email">
-                                <button>
+                                <button class="">
                                     Subscribe
                                 </button>
                             </form>

@@ -107,7 +107,7 @@
                         <input type="email" placeholder="Email" />
                         <input type="text" placeholder="Phone" />
                         <input type="text" class="message-box" placeholder="Message" />
-                        <button>SEND</button>
+                        <button class="add-cart-btn">SEND</button>
                     </form>
                 </div>
             </div>
@@ -117,18 +117,15 @@
 
     {{-- SLIDER CSS --}}
     <style>
-        /* ===================== HERO SLIDER ===================== */
+
         .hero-slider {
             position: relative;
             width: 90%;
-            /* responsive width */
             max-width: 1200px;
-            /* optional max width */
             height: 65vh;
             margin: 20px auto;
             overflow: hidden;
             border-radius: 25px;
-            /* rounded corners */
         }
 
         .slide {
@@ -180,6 +177,10 @@
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
+        }
+
+        .arrow {
+            display: none;
         }
 
         .arrow {
@@ -237,7 +238,7 @@
             }
         }
 
-        /* ===================== RESPONSIVE STYLING ===================== */
+
         @media (max-width: 992px) {
             .hero-slider {
                 height: 55vh;
