@@ -9,7 +9,6 @@ use App\Http\Controllers\AdminController;
 Route::get('/',[UserController::class, 'home'])->name('index');
 Route::get('/product_details/{id}',[UserController::class, 'productDetails'])->name('product_details');
 Route::get('/allproducts',[UserController::class, 'allProducts'])->name('viewallproducts');
-
 Route::get('/why',[UserController::class, 'whyUs'])->name('why');
 Route::get('/testimonial',[UserController::class, 'testimonial'])->name('testimonial');
 Route::get('/contact',[UserController::class, 'contact'])->name('contact');

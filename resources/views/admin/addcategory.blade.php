@@ -7,7 +7,7 @@
             {{ session('category_message') }}
         </div>
     @endif
-    <div class="container-fluid">
+    <div class="add-category-box">
         <form action="{{ route('admin.postaddcategory') }}" method="POST">
             @csrf
             <input type="text" name="category" placeholder="Add category">

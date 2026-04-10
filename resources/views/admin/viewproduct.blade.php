@@ -1,54 +1,63 @@
-@extends('admin.maindesign') 
+@extends('admin.maindesign')
 
 @section('view_product')
-<div class="container-fluid">
-    <h2>All Products</h2>
+<div class="cart-container">
 
-    @if(session('product_message'))
-        <div class="scs-msg">{{ session('product_message') }}</div>
+ 
+
+    @if (session('product_message'))
+        <div class="msg success">{{ session('product_message') }}</div>
     @endif
 
-     @if(session('delete_product_message'))
-        <div class="scs-msg">{{ session('delete_product_message') }}</div>
+    @if (session('delete_product_message'))
+        <div class="msg success">{{ session('delete_product_message') }}</div>
     @endif
+       <h2 class="cart-title">All Products</h2>
 
-    <table border="1" cellpadding="10" cellspacing="0" style="width:100%; text-align:center;">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Category</th>
-                <th>Image</th>
-                <th>Action</th>
+    <div class="cart-list">
 
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($products as $product)
-            <tr>
-                <td>{{ $product->id }}</td>
-                <td>{{ $product->product_title }}</td>
-                <td>{{ $product->product_quantity }}</td>
-                <td>{{ $product->product_price }}</td>
-               <td>{{ $product->product_category }}</td>
-                <td>
-                    @if($product->product_image)
-                        <img src="{{ asset('products/'.$product->product_image) }}" width="80" alt="Product Image">
+        @foreach ($products as $product)
+            <div class="cart-item">
+
+                <!-- IMAGE -->
+                <div class="cart-img">
+                    @if ($product->product_image)
+                        <img src="{{ asset('products/' . $product->product_image) }}">
                     @else
-                        No Image
+                        <span>No Image</span>
                     @endif
-                </td>
-                <td>
-                    <a style="color: green;" href="{{ route('admin.updateproduct',$product->id) }}">Update</a><br>
-                    <a style="color: red;" href="{{ route('admin.deleteproduct',$product->id) }}">Delete</a>
-                </td>
-            </tr>
-            @endforeach
+                </div>
 
-            {{ $products->links() }}
-        </tbody>
-    </table>
+                <!-- INFO -->
+                <div class="cart-info">
+                    <h3>{{ $product->product_title }}</h3>
+                    <p>Category: {{ $product->product_category }}</p>
+                </div>
+
+                <!-- PRICE -->
+                <div class="cart-price">
+                    ${{ $product->product_price }}
+                </div>
+
+                <!-- QTY -->
+                <div class="cart-qty">
+                    Qty: {{ $product->product_quantity }}
+                </div>
+
+                <!-- ACTIONS -->
+                <div class="cart-actions">
+                    <a href="{{ route('admin.updateproduct', $product->id) }}" class="btn edit">Edit</a>
+                    <a href="{{ route('admin.deleteproduct', $product->id) }}" class="btn delete">Delete</a>
+                </div>
+
+            </div>
+        @endforeach
+
+    </div>
+
+    <div class="pagination">
+        {{ $products->links() }}
+    </div>
+
 </div>
 @endsection

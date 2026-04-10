@@ -7,7 +7,7 @@
             {{ session('category_updated_message') }}
         </div>
     @endif
-    <div class="container-fluid">
+    <div class="update-category-box">
         <form action="{{ route('admin.postupdatecategory', $category->id) }}" method="POST">
             @csrf
             <input type="text" name="category" value="{{ $category->category }}">

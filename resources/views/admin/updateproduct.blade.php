@@ -9,7 +9,7 @@
     </div>
 @endif
 
-<div class="container-fluid">
+<div class="update-category-container">
     <form action="{{ route('admin.postupdateproduct', $product->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
 

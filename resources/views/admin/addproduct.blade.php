@@ -7,7 +7,7 @@
             {{ session('product_message') }}
         </div>
     @endif
-    <div class="container-fluid">
+    <div class="add-product">
         <form action="{{ route('admin.postaddproduct') }}" method="POST" enctype="multipart/form-data"> 
             @csrf
             <input type="text" name="product_title" placeholder="Product title">

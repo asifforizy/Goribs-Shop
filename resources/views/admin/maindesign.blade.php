@@ -111,7 +111,7 @@
                 {{-- Category Dropdown --}}
                 <li>
                     <a href="#categoryDropdown" data-toggle="collapse" aria-expanded="false">
-                        <i class="icon-folder"></i> Category
+                        <i class="icon-windows"></i> Category
                     </a>
 
                     <ul id="categoryDropdown" class="collapse list-unstyled">
