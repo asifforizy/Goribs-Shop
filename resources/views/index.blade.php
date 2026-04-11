@@ -25,7 +25,7 @@
             </div>
         </div>
 
-        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f');">
+        <div class="slide" style="background-image:url('https://i.ibb.co/nxzWYKp/hero1.jpg');">
             <div class="overlay">
                 <div class="content">
                     <h1>Fresh New Arrivals</h1>

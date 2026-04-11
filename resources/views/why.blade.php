@@ -105,7 +105,7 @@
                                 Fast Delivery
                             </h5>
                             <p>
-                                variations of passages of Lorem Ipsum available
+                                Super Fast Delivery anywhere in Bangladesh 
                             </p>
                         </div>
                     </div>
@@ -223,7 +223,7 @@
                                 Free Shiping
                             </h5>
                             <p>
-                                variations of passages of Lorem Ipsum available
+                                Free Shipping in all major cities in Bangladesh
                             </p>
                         </div>
                     </div>
@@ -248,7 +248,7 @@
                                 Best Quality
                             </h5>
                             <p>
-                                variations of passages of Lorem Ipsum available
+                                The Best quality you will ever had in your life
                             </p>
                         </div>
                     </div>
